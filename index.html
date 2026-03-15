@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<title>الفضاء العميق</title>
+<STyle>body {
+  margin: 0;
+  overflow: hidden;
+  background: radial-gradient(circle at bottom, #020111 0%, #000000 100%);
+}
+
+
+canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 0;
+}
+
+
+.HH {
+  position: relative;
+  z-index: 1;
+  color: rgb(48, 12, 107);
+  text-align: center;
+  margin-top: 200px;
+  font-size: 100px;
+}
+
+h2{
+  position: relative;
+  z-index: 1;
+  color: white;
+  text-align: center;
+}</STyle>
+<H1 class="HH">مرحبًا في الفضاء
+</H1>
+
+    <H2 class="poo" style="color: #681083;">اليوم شرح عن الفضاء و الكواكب ال المتواجده فيه</H2>
+    
+
+<style>
+body {
+  margin: 0;
+  overflow: hidden;
+  background: radial-gradient(circle at bottom, #020111 0%, #000000 100%);
+}
+
+canvas {
+  display: block;
+}
+</style>
+</head>
+
+<body>
+<canvas id="space"></canvas>
+
+<script>
+const canvas = document.getElementById("space");
+const ctx = canvas.getContext("2d");
+
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
+
+let stars = [];
+
+for (let i = 0; i < 800; i++) {
+  stars.push({
+    x: Math.random() * canvas.width,
+    y: Math.random() * canvas.height,
+    radius: Math.random() * 1.5,
+    speed: Math.random() * 0.3
+  });
+}
+
+function drawStars() {
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+  ctx.fillStyle = "white";
+  stars.forEach(star => {
+    ctx.beginPath();
+    ctx.arc(star.x, star.y, star.radius, 0, Math.PI * 2);
+    ctx.fill();
+
+    star.y += star.speed;
+
+    if (star.y > canvas.height) {
+      star.y = 0;
+      star.x = Math.random() * canvas.width;
+    }
+  });
+
+  requestAnimationFrame(drawStars);
+}
+
+drawStars();
+
+window.addEventListener("resize", () => {
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
+});
+</script>
+<hr>
+
+  <h1 style="color:#e0cdb4;" class="oo"><p class="pqq">مقدمة عن الفضاء</p>
+ الفضاء هو العالم الواسع خارج كوكب الأرض ويضم النجوم والكواكب والمجرات. نعيش في مجرة تسمى **درب التبانة** التي تحتوي على النظام الشمسي وكوكب الأرض. يهتم العلماء بدراسة الفضاء لاكتشاف أسراره مثل الكواكب والثقوب السوداء. ومع تطور التكنولوجيا أصبح الإنسان قادرًا على إرسال مركبات وأقمار صناعية لاستكشاف هذا الكون الواسع. 🚀🌌
+
+</h1>
+
+ 
+
+</body>
+</html>
